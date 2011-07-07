@@ -1,7 +1,9 @@
 package jbs2011.pa3;
 
 public class Square {
-	/**
+	/**Jared Dunn
+	 * JBS2011
+	 * PA4
 	 * the x and y position of the center of the square
 	 * and its width w
 	 */

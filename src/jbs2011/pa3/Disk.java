@@ -1,6 +1,9 @@
 package jbs2011.pa3;
 
-/**
+/**Jared Dunn
+ * JBS 2011 
+ * PA4
+ * 
  * This represents a Disk which is controlled by gravity but which can be
  * caught and flicked by a user.
  * @author tim

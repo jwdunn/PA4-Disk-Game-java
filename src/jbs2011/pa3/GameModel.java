@@ -4,6 +4,12 @@ import java.util.ArrayList;
 
 
 /**
+ * Jared Dunn
+ * JBS 2011
+ * PA4
+ * i changed the game by removing squares you can hit. when your disk hits a gem it dissapears. there are enough disks as jems
+ * i also changed the colors and the timer
+ * 
  * This provides a model for how the game works
  * with hooks for user interaction. 
  * The user flings one (or more) disks trying to hit all targets (which disappear when hit)
@@ -37,7 +43,7 @@ public class GameModel  {
 	/**
 	 * length of a game in seconds
 	 */
-	public float gameLength=15; // seconds
+	public float gameLength=30; // seconds
 	/**
 	 * time remaining in the current game
 	 */
@@ -75,7 +81,7 @@ public class GameModel  {
 	/**
 	 * this is the game gravity for all non-weightless, non-static objects
 	 */
-	public float gravity = -100; 
+	public float gravity = -200; 
 	
 	/**
 	 * create an empty GameModel
@@ -267,10 +273,10 @@ public class GameModel  {
 				d.update(dt);
 				
 				// check to see if the disk has hit any squares, if so it become static
-				for (Square s:squares) 
+/*				for (Square s:squares) 
 					if (d.intersects(s)) 
 						d.isStatic=true;
-				
+*/				
 				// check to see if the disk has hit any static disks, and make it static if it has
 				for (Disk d1:disks) 
 					if (d.intersects(d1) && d1.isStatic)
@@ -286,7 +292,7 @@ public class GameModel  {
 					
 		}
 		for (Disk d:hitDisk){
-			//disks.remove(d);
+			disks.remove(d);
 		}
 		for (Square s:hitTarget)
 			targets.remove(s);
@@ -334,6 +340,8 @@ public class GameModel  {
 			addDisk(300f, 500f, 30f);
 			addDisk(350f, 500f, 20f);
 			addDisk(400f, 500f, 10f);
+			addDisk(400f, 500f, 10f);
+			addDisk(400f, 500f, 10f);
 			d.vx = 10;
 			d.vy = 102;
 			break;
@@ -347,7 +355,7 @@ public class GameModel  {
 			for (int i=0; i<10; i++)
 				this.addTarget((float)Math.random()*(width-200)+100,(float)Math.random()*(height-100)+100,50);
 
-			for (int i=0;i<2;i++)
+			for (int i=0;i<10;i++)
 				this.addDisk(50f*i,50f,25f);
 
 			break;
